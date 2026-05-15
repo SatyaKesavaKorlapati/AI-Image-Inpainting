@@ -1,0 +1,5 @@
+gradio>=6.11,<6.13
+opencv-python
+Pillow==9.5.0
+numpy
+loguru
