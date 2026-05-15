@@ -1,31 +1,173 @@
-# ProjectAI V3
+# AI Image Inpainting & Object Removal System
 
-ProjectAI V3 is a locally vendored and rebranded inpainting codebase adapted
-into the `project_ai.v3` package layout for this repository.
+An AI-powered image inpainting and object removal application built using LaMa and Gradio. The system enables mask-guided object removal and scene restoration through deep-learning-based image completion.
 
-## Structure
+The project provides an interactive Gradio interface for removing unwanted objects from images while preserving visual consistency in the surrounding scene.
 
-- `engine/`: backend package code, models, plugins, API, CLI, tests
-- `web_app/`: frontend source
-- `gradio_app.py`: simple object-removal Gradio launcher
-- `gradio_lama_app.py`: LaMa-focused Gradio launcher
-- `main.py`: CLI entrypoint wrapper
+---
 
-## Usage
+## Overview
 
-Run the server from the repository root:
+This project combines:
 
-```bash
-python -m project_ai.v3.main start --model lama --device cpu --port 8080
+- LaMa-based image inpainting
+- Mask-guided object removal
+- Deep-learning image restoration
+- Interactive Gradio UI
+- Modular inference pipeline
+- Local CPU/GPU execution
+
+The application allows users to:
+- upload an image
+- mark unwanted objects
+- generate restored outputs using AI-based inpainting
+
+---
+
+## Features
+
+- AI-powered object removal
+- LaMa image inpainting pipeline
+- Interactive Gradio web interface
+- Local inference support
+- CPU and GPU compatibility
+- Modular backend architecture
+- Lightweight deployment setup
+- Automatic model handling utilities
+
+---
+
+## Technologies Used
+
+### AI / Deep Learning
+- PyTorch
+- LaMa
+- OpenCV
+
+### Frontend
+- Gradio
+
+### Backend
+- Python
+
+---
+
+## Project Structure
+
+```text
+AI-Image-Inpainting/
+│
+├── gradio_lama_app.py
+├── README.md
+├── requirements.txt
+├── LICENSE
+│
+└── engine/
+    ├── api.py
+    ├── const.py
+    ├── download.py
+    ├── helper.py
+    ├── installer.py
+    ├── model_manager.py
+    ├── runtime.py
+    ├── schema.py
+    │
+    ├── file_manager/
+    │
+    └── model/
+        ├── base.py
+        ├── lama.py
+        └── utils.py
 ```
 
-Run the Gradio object-removal UI:
+---
+
+## Installation
+
+### Clone Repository
 
 ```bash
-python -m project_ai.v3.gradio_app
+git clone https://github.com/SatyaKesavaKorlapati/AI-Image-Inpainting.git
+cd AI-Image-Inpainting
 ```
 
-## Note
+### Install Dependencies
 
-This folder preserves the upstream Apache-2.0 `LICENSE` file from the copied
-project. Keep that license with this vendored code.
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Running the Application
+
+Launch the Gradio application:
+
+```bash
+python gradio_lama_app.py
+```
+
+After launching, open the local Gradio URL displayed in the terminal.
+
+---
+
+## Workflow
+
+1. Upload an image
+2. Draw a mask over unwanted regions
+3. Run AI inpainting
+4. Generate restored image output
+
+The system fills masked regions using deep-learning-based scene understanding and texture synthesis.
+
+---
+
+## Core Components
+
+### LaMa Inpainting Model
+
+The application uses LaMa for:
+- object removal
+- image restoration
+- mask-guided scene completion
+
+### Gradio Interface
+
+The frontend provides:
+- image upload
+- mask drawing
+- interactive inference
+- restored image preview
+
+### Modular Backend
+
+The backend contains:
+- model management
+- runtime configuration
+- inference utilities
+- file management helpers
+
+---
+
+## Use Cases
+
+- Object removal
+- Photo cleanup
+- Scene restoration
+- Background refinement
+- Image editing workflows
+- AI-assisted content generation
+
+---
+
+## Future Improvements
+
+- Drag-and-drop mask editor
+- Multi-model selection
+- HD inpainting support
+- Real-time preview generation
+- Batch image processing
+- Diffusion-based refinement
+
+---
+
